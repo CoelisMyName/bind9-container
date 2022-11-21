@@ -1,0 +1,28 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	3600
+cloud-service.		IN	SOA	cloud-service. (
+				     10		; Serial
+				   3600		; Refresh
+				    600		; Retry
+				  86400		; Expire
+				  86400 )	; Negative Cache TTL
+;
+
+cloud-service.		IN	NS	cloud-service.
+
+cloud-service.		IN	A	192.168.1.100
+hcr.cloud-service.	IN	A	192.168.1.100
+
+mi-router.			IN	SOA	mi-router. (
+				     10		; Serial
+				   3600		; Refresh
+				    600		; Retry
+				  86400		; Expire
+				  86400 )	; Negative Cache TTL
+;
+
+mi-router.			IN	NS	cloud-service.
+
+mi-router.			IN	A	192.168.1.10
