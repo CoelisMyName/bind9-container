@@ -11,7 +11,6 @@ options {
 	// the all-0's placeholder.
 
 	forwarders {
-		0.0.0.0;
 		192.168.1.1;
 	};
 
@@ -19,7 +18,7 @@ options {
 	// If BIND logs error messages about the root key being expired,
 	// you will need to update your keys.  See https://www.isc.org/bind-keys
 	//========================================================================
-	dnssec-validation auto;
+	dnssec-validation no;
 
 
 	listen-on-v6 { any; };
