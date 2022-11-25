@@ -27,7 +27,7 @@ zone "255.in-addr.arpa" {
 	file "/etc/bind/db.255";
 };
 
-zone "cloud-service" {
+zone "cloud-service.com" {
 	type master;
-	file "/var/lib/bind/db.cloud-service";
+	file "/var/lib/bind/db.cloud-service.com";
 };
