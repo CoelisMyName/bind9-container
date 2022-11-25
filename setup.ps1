@@ -15,4 +15,4 @@ docker run -d `
 -v "$CWD/bind9/var/lib/bind:/var/lib/bind" `
 ubuntu/bind9:latest
 
-nslookup -port=30053 hcr.cloud-service 127.0.0.1
+nslookup -port=30053 hcr.cloud-service.com 127.0.0.1

@@ -14,9 +14,9 @@ mkdir -p ./bind9/var/cache/bind
 docker run -d \
 --name bind9-container \
 -e TZ=UTC \
--p 30053:53/tcp \
--p 30053:53/udp \
--p 30953:953/tcp \
+-p 53:53/tcp \
+-p 53:53/udp \
+-p 953:953/tcp \
 -e BIND9_USER=bind \
 -v ./bind9/etc/bind/named.conf.options:/etc/bind/named.conf.options \
 -v ./bind9/etc/bind/named.conf.default-zones:/etc/bind/named.conf.default-zones \
@@ -24,4 +24,4 @@ docker run -d \
 -v ./bind9/var/lib/bind:/var/lib/bind \
 ubuntu/bind9:latest
 
-nslookup -port=30053 hcr.cloud-service 127.0.0.1
+nslookup -port=53 hcr.cloud-service.com 127.0.0.1
